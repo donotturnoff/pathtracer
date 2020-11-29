@@ -71,7 +71,7 @@ public class Rotation {
 		return "Rotation[" + x + ", " + y + ", " + z + "]";
 	}
 	
-	public final static Rotation generateFromAxisAngle(Vector axis, double angle) {
+	public static Rotation generateFromAxisAngle(Vector axis, double angle) {
 		
 		/* Converts an axis-angle rotation (rotation by a specified amount
 		 * around a given axis) into Euler angles. */

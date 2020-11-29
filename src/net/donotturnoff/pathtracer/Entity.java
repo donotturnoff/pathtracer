@@ -28,19 +28,17 @@ public class Entity {
 	}
 	
 	public String toString() {
-		StringBuilder sb = new StringBuilder();
-		sb.append("Entity[name=\"");
-		sb.append(name);
-		sb.append("\", refPoint=");
-		sb.append(refPoint);
-		sb.append(", rotation=");
-		sb.append(rotation);
-		sb.append(", material=");
-		sb.append(material);
-		sb.append(", boundingBox=");
-		sb.append(boundingBox);
-		sb.append("]");
-		return sb.toString();
+		return "Entity[name=\"" +
+				name +
+				"\", refPoint=" +
+				refPoint +
+				", rotation=" +
+				rotation +
+				", material=" +
+				material +
+				", boundingBox=" +
+				boundingBox +
+				"]";
 	}
 	
 	protected void setName(String name) {

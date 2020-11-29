@@ -19,19 +19,17 @@ public class BoundingBox {
 	}
 	
 	public String toString() {
-		StringBuilder sb = new StringBuilder();
-		sb.append("BoundingBox[center=");
-		sb.append(center);
-		sb.append(", rotation=");
-		sb.append(rotation);
-		sb.append(", width=");
-		sb.append(width);
-		sb.append(", height=");
-		sb.append(height);
-		sb.append(", depth=");
-		sb.append(depth);
-		sb.append("]");
-		return sb.toString();
+		return "BoundingBox[center=" +
+				center +
+				", rotation=" +
+				rotation +
+				", width=" +
+				width +
+				", height=" +
+				height +
+				", depth=" +
+				depth +
+				"]";
 	}
 	
 	private void setCenter(Vector center) throws IllegalArgumentException {

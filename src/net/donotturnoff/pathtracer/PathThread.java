@@ -7,11 +7,11 @@ package net.donotturnoff.pathtracer;
 
 public class PathThread extends Thread {
 	
-	private PathTracer pt;
-	private Scene scene;
-	private Camera camera;
-	private int width, height, recursionDepth, samples;
-	private boolean debug;
+	private final PathTracer pt;
+	private final Scene scene;
+	private final Camera camera;
+	private final int width, height, recursionDepth, samples;
+	private final boolean debug;
 	
 	public PathThread(PathTracer pt, Scene scene, int width, int height, int recursionDepth, int samples, boolean debug) {
 		this.pt = pt;
@@ -28,13 +28,13 @@ public class PathThread extends Thread {
 	public void run() {
 		Integer[] coords = pt.fetchTask();
 		while (coords != null) {
-			int x = coords[0].intValue();
-			int y = coords[1].intValue();
+			int x = coords[0];
+			int y = coords[1];
 			
 			Vector[] results = new Vector[samples];
 			
-			double ox = x-width/2;
-			double oy = y-height/2;
+			double ox = x-((double) width)/2;
+			double oy = y-((double) height)/2;
 			
 			double lensWidth = camera.getLensWidth();
 			double lensHeight = camera.getLensHeight();

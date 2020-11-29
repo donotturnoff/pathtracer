@@ -15,19 +15,17 @@ public class Camera {
 	}
 	
 	public String toString() {
-		StringBuilder sb = new StringBuilder();
-		sb.append("Camera[location=");
-		sb.append(location);
-		sb.append(", rotation=");
-		sb.append(rotation);
-		sb.append(", lensWidth=");
-		sb.append(lensWidth);
-		sb.append(", lensHeight=");
-		sb.append(lensHeight);
-		sb.append(", focalLength=");
-		sb.append(focalLength);
-		sb.append("]");
-		return sb.toString();
+		return "Camera[location=" +
+				location +
+				", rotation=" +
+				rotation +
+				", lensWidth=" +
+				lensWidth +
+				", lensHeight=" +
+				lensHeight +
+				", focalLength=" +
+				focalLength +
+				"]";
 	}
 	
 	private void setLocation(Vector location) throws IllegalArgumentException {

@@ -58,21 +58,19 @@ public class Material {
 	}
 	
 	public String toString() {
-		StringBuilder sb = new StringBuilder();
-		sb.append("Material[name=\"");
-		sb.append(name);
-		sb.append("\", albedo=");
-		sb.append(albedo);
-		sb.append(", specularIndex=");
-		sb.append(specularIndex);
-		sb.append(", opacity=");
-		sb.append(opacity);
-		sb.append(", refractiveIndex=");
-		sb.append(refractiveIndex);
-		sb.append(", emit=");
-		sb.append(emit);
-		sb.append("]");
-		return sb.toString();
+		return "Material[name=\"" +
+				name +
+				"\", albedo=" +
+				albedo +
+				", specularIndex=" +
+				specularIndex +
+				", opacity=" +
+				opacity +
+				", refractiveIndex=" +
+				refractiveIndex +
+				", emit=" +
+				emit +
+				"]";
 	}
 	
 	protected void setName(String name) {

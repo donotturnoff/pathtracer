@@ -2,14 +2,15 @@ package net.donotturnoff.pathtracer;
 
 import java.awt.image.BufferedImage;
 import java.awt.image.DataBufferInt;
-import java.awt.Color;
 import java.util.concurrent.ArrayBlockingQueue;
 
 public class PathTracer {
 	
-	private int recursionDepth, samples, threads;
+	private int recursionDepth;
+	private int samples;
+	private final int threads;
 	private Vector origin;
-	private boolean debug;
+	private final boolean debug;
 	private int[][] data;
 	private ArrayBlockingQueue<Integer[]> queue;
 	
@@ -36,7 +37,7 @@ public class PathTracer {
 	public BufferedImage trace(Scene scene, int width, int height, int recursionDepth, int samples) {
 		data = new int[height][width];
 		
-		queue = new ArrayBlockingQueue<Integer[]>(width*height);
+		queue = new ArrayBlockingQueue<>(width * height);
 		Thread[] activeThreads = new Thread[threads];
 		
 		for (int x = 0; x < width; x++) {

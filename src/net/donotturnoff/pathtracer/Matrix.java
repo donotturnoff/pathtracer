@@ -68,15 +68,15 @@ public class Matrix {
 		return array;
 	}
 	
-	private final boolean validIndex(int row, int column) {
+	private boolean validIndex(int row, int column) {
 		return (validRow(row) && validColumn(column));
 	}
 	
-	private final boolean validRow(int row) {
+	private boolean validRow(int row) {
 		return ((row < rows()) && (row >= 0));
 	}
 	
-	private final boolean validColumn(int column) {
+	private boolean validColumn(int column) {
 		return ((column < columns()) && (column >= 0));
 	}
 	
@@ -261,48 +261,45 @@ public class Matrix {
 	
 	public final double determinant() throws UnsupportedOperationException {
 		if (isSquare()) {
-			return determinant(0);
+			double runningTotal = 0;
+			final int rows = rows();
+			final int columns = columns();
+
+			if (rows == 0 || columns == 0) {
+
+				/* Handle empty matrix */
+				return 1.0;
+
+			} else if (rows == 1 && columns == 1) {
+
+				/* Base case of recursion - the determinant of a 1x1 matrix is the
+				 * only element in that matrix. */
+				return array[0][0];
+
+			} else {
+
+				/* Use the Leibniz formula to calculate the determinant by
+				 * recursively determining determinants of minors. */
+				for (int column = 0; column < columns; column++) {
+
+					/* For every element in the first row, calculate the determinant
+					 * of the minor and multiply by the current element. */
+					final double minorDeterminant = minor(0, column).determinant();
+					final double newTerm = array[0][column] * minorDeterminant;
+
+					/* Alternately add and subtract the new term from the
+					 * running total. */
+					if (column % 2 == 0) {
+						runningTotal += newTerm;
+					} else {
+						runningTotal -= newTerm;
+					}
+				}
+
+				return runningTotal;
+			}
 		} else {
 			throw new UnsupportedOperationException("Cannot find determinant of non-square matrix");
-		}
-	}
-	
-	private final double determinant(double runningTotal) {
-		final int rows = rows();
-		final int columns = columns();
-		
-		if (rows == 0 || columns == 0) {
-			
-			/* Handle empty matrix */
-			return 1.0;
-			
-		} else if (rows == 1 && columns == 1) {
-			
-			/* Base case of recursion - the determinant of a 1x1 matrix is the
-			 * only element in that matrix. */
-			return array[0][0];
-			
-		} else {
-			
-			/* Use the Leibniz formula to calculate the determinant by
-			 * recursively determining determinants of minors. */
-			for (int column = 0; column < columns; column++) {
-				
-				/* For every element in the first row, calculate the determinant
-				 * of the minor and multiply by the current element. */
-				final double minorDeterminant = minor(0, column).determinant();
-				final double newTerm = array[0][column] * minorDeterminant;
-				
-				/* Alternately add and subtract the new term from the 
-				 * running total. */
-				if (column % 2 == 0) {
-					runningTotal += newTerm;
-				} else {
-					runningTotal -= newTerm;
-				}
-			}
-			
-			return runningTotal;
 		}
 	}
 	

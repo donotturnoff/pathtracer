@@ -19,21 +19,19 @@ public class Cell {
 	}
 	
 	public String toString() {
-		StringBuilder sb = new StringBuilder();
-		sb.append("Cell[center=");
-		sb.append(center);
-		sb.append(", width=");
-		sb.append(width);
-		sb.append(", height=");
-		sb.append(height);
-		sb.append(", depth=");
-		sb.append(depth);
-		sb.append(", entities=");
-		sb.append(Arrays.toString(entities));
-		sb.append(", subcells=");
-		sb.append(Arrays.toString(subcells));
-		sb.append("]");
-		return sb.toString();
+		return "Cell[center=" +
+				center +
+				", width=" +
+				width +
+				", height=" +
+				height +
+				", depth=" +
+				depth +
+				", entities=" +
+				Arrays.toString(entities) +
+				", subcells=" +
+				Arrays.toString(subcells) +
+				"]";
 	}
 	
 	private void setCenter(Vector center) throws IllegalArgumentException {
@@ -111,8 +109,8 @@ public class Cell {
 	}
 	
 	public ArrayList<Entity> takeEntities(ArrayList<Entity> potentialEntities) {
-		ArrayList<Entity> takenEntities = new ArrayList<Entity>();
-		ArrayList<Entity> remainingEntities = new ArrayList<Entity>();
+		ArrayList<Entity> takenEntities = new ArrayList<>();
+		ArrayList<Entity> remainingEntities = new ArrayList<>();
 		
 		for (Entity entity: potentialEntities) {
 			if (entity.inCell(this)) {

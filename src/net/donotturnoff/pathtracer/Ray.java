@@ -13,8 +13,6 @@ package net.donotturnoff.pathtracer;
  * - Make sure rendering equation is followed correctly
  */
 
-import java.util.Arrays;
-
 public class Ray {
 	
 	public static final double EPSILON = 0.001;
@@ -37,19 +35,17 @@ public class Ray {
 	}
 	
 	public String toString() {
-		StringBuilder sb = new StringBuilder();
-		sb.append("Ray[origin=");
-		sb.append(origin);
-		sb.append(", direction=");
-		sb.append(direction);
-		sb.append(", samples=");
-		sb.append(samples);
-		sb.append(", recursionDepth=");
-		sb.append(recursionDepth);
-		sb.append(", pathLength=");
-		sb.append(pathLength);
-		sb.append("]");
-		return sb.toString();
+		return "Ray[origin=" +
+				origin +
+				", direction=" +
+				direction +
+				", samples=" +
+				samples +
+				", recursionDepth=" +
+				recursionDepth +
+				", pathLength=" +
+				pathLength +
+				"]";
 	}
 	
 	private void setScene(Scene scene) {
@@ -222,7 +218,7 @@ public class Ray {
 		double u = Math.random();
 		double v = Math.random();
 		double phi = 2 * Math.PI * v;
-		double sinTheta = 0;
+		double sinTheta;
 		
 		if (specularIndex == 0) {
 			/* This is an optimisation for uniform distributions (perfectly diffuse materials). */

@@ -253,7 +253,7 @@ public class Vector {
 	
 	public static Vector average(Vector[] vectors) throws IllegalArgumentException {
 		if (vectors.length == 0) {
-			return null;
+			return new Vector(0, 0, 0);
 		} else {
 			int components = vectors[0].components();
 			Vector averageVector = new Vector(new double[components]);
