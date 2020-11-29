@@ -1,4 +1,4 @@
-package net.donotturnoff.pathtracer;
+package net.donotturnoff.pathtracer.util;
 
 /*
  * To do:
@@ -12,6 +12,11 @@ package net.donotturnoff.pathtracer;
  * - Make sure Monte Carlo method is followed correctly (e.g. divide by pi?)
  * - Make sure rendering equation is followed correctly
  */
+
+import net.donotturnoff.pathtracer.entity.Entity;
+import net.donotturnoff.pathtracer.material.Material;
+import net.donotturnoff.pathtracer.maths.Matrix;
+import net.donotturnoff.pathtracer.maths.Vector;
 
 public class Ray {
 	

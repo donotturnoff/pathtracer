@@ -1,9 +1,12 @@
-package net.donotturnoff.pathtracer;
+package net.donotturnoff.pathtracer.util;
 
 /*
  * To do:
  * - Check depth of field works
  */
+
+import net.donotturnoff.pathtracer.PathTracer;
+import net.donotturnoff.pathtracer.maths.Vector;
 
 public class PathThread extends Thread {
 	

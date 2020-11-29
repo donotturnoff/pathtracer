@@ -1,4 +1,6 @@
-package net.donotturnoff.pathtracer;
+package net.donotturnoff.pathtracer.material;
+
+import net.donotturnoff.pathtracer.maths.Vector;
 
 import java.awt.Color;
 

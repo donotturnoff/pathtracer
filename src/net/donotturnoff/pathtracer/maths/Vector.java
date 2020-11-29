@@ -1,4 +1,4 @@
-package net.donotturnoff.pathtracer;
+package net.donotturnoff.pathtracer.maths;
 
 import java.util.Arrays;
 import java.awt.Color;

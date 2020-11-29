@@ -1,9 +1,14 @@
-package net.donotturnoff.pathtracer;
+package net.donotturnoff.pathtracer.entity;
 
 /*
  * To do:
  * - Write random point generator method
  */
+
+import net.donotturnoff.pathtracer.material.Material;
+import net.donotturnoff.pathtracer.maths.Rotation;
+import net.donotturnoff.pathtracer.maths.Vector;
+import net.donotturnoff.pathtracer.util.BoundingBox;
 
 public class Sphere extends Entity {
 	

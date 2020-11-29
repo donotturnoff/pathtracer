@@ -1,4 +1,4 @@
-package net.donotturnoff.pathtracer;
+package net.donotturnoff.pathtracer.maths;
 
 public class Rotation {
 

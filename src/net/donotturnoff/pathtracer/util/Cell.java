@@ -1,4 +1,7 @@
-package net.donotturnoff.pathtracer;
+package net.donotturnoff.pathtracer.util;
+
+import net.donotturnoff.pathtracer.entity.Entity;
+import net.donotturnoff.pathtracer.maths.Vector;
 
 import java.util.ArrayList;
 import java.util.Arrays;

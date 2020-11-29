@@ -1,4 +1,8 @@
-package net.donotturnoff.pathtracer;
+package net.donotturnoff.pathtracer.util;
+
+import net.donotturnoff.pathtracer.maths.Matrix;
+import net.donotturnoff.pathtracer.maths.Rotation;
+import net.donotturnoff.pathtracer.maths.Vector;
 
 public class BoundingBox {
 	

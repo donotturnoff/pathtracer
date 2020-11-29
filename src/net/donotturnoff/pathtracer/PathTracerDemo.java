@@ -1,5 +1,14 @@
 package net.donotturnoff.pathtracer;
 
+import net.donotturnoff.pathtracer.entity.Entity;
+import net.donotturnoff.pathtracer.entity.Sphere;
+import net.donotturnoff.pathtracer.material.DiffuseMaterial;
+import net.donotturnoff.pathtracer.material.Material;
+import net.donotturnoff.pathtracer.maths.Rotation;
+import net.donotturnoff.pathtracer.maths.Vector;
+import net.donotturnoff.pathtracer.util.Camera;
+import net.donotturnoff.pathtracer.util.Scene;
+
 import java.awt.Color;
 import java.awt.image.BufferedImage;
 import javax.imageio.ImageIO;

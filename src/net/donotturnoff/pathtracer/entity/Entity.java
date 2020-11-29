@@ -1,4 +1,4 @@
-package net.donotturnoff.pathtracer;
+package net.donotturnoff.pathtracer.entity;
 
 /*
  * Entities must define:
@@ -6,6 +6,14 @@ package net.donotturnoff.pathtracer;
  * - A method for calculating the surface normal at a given point on the entity's surface
  * - A method for calculating the intersection parameter between a ray and the entity
  */
+
+import net.donotturnoff.pathtracer.util.Cell;
+import net.donotturnoff.pathtracer.material.DiffuseMaterial;
+import net.donotturnoff.pathtracer.material.Material;
+import net.donotturnoff.pathtracer.maths.Matrix;
+import net.donotturnoff.pathtracer.maths.Rotation;
+import net.donotturnoff.pathtracer.maths.Vector;
+import net.donotturnoff.pathtracer.util.BoundingBox;
 
 public class Entity {
 	

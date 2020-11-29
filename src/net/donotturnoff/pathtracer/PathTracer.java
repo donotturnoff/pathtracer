@@ -1,5 +1,9 @@
 package net.donotturnoff.pathtracer;
 
+import net.donotturnoff.pathtracer.maths.Vector;
+import net.donotturnoff.pathtracer.util.PathThread;
+import net.donotturnoff.pathtracer.util.Scene;
+
 import java.awt.image.BufferedImage;
 import java.awt.image.DataBufferInt;
 import java.util.concurrent.ArrayBlockingQueue;
